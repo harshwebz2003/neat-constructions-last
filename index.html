@@ -881,7 +881,13 @@ function initAllAnimations() {
       // Hero Section එකේ Content ලයිව් අප්ඩේට් කිරීම
       if(data.heroTitle) {
         const heroHeading = document.querySelector('.hero-h');
-        if(heroHeading) heroHeading.innerHTML = data.heroTitle;
+        if(heroHeading) {
+          let title = data.heroTitle;
+          if (title.includes('EXCELLENCE') && !title.includes('EXCELLENCE,')) {
+            title = title.replace('EXCELLENCE', 'EXCELLENCE,');
+          }
+          heroHeading.innerHTML = title;
+        }
       }
       if(data.heroSub) {
         const heroSubText = document.querySelector('.hero-sub');
