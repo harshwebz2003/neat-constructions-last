@@ -5,23 +5,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
 window.lenis = null;
-try {
-  window.lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,
-    wheelMultiplier: 1,
-    infinite: false,
-  });
-
-  function raf(time) {
-    if (window.lenis) window.lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-} catch (e) {
-  console.warn("Lenis library not loaded.", e);
-}
 
 // Global window loader sequence (Failsafe & DOMContentLoaded optimized)
 function hidePreloader() {

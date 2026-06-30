@@ -7,7 +7,7 @@ const multer = require('multer');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const isVercel = process.env.VERCEL || process.env.NODE_ENV === 'production';
+const isVercel = process.env.VERCEL || process.env.NOW_REGION || process.env.AWS_LAMBDA_FUNCTION_NAME || __dirname.includes('/var/task') || __dirname.includes('\\var\\task');
 const CONFIG_FILE = isVercel ? path.join('/tmp', 'config.json') : path.join(__dirname, 'config.json');
 const UPLOADS_DIR = isVercel ? path.join('/tmp', 'uploads') : path.join(__dirname, 'Assets', 'uploads');
 
@@ -44,109 +44,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Initial Default Configuration
-const DEFAULT_CFG = {
-  version: 2,
-  auth: { password: 'neat@2026' },
-  global: {
-    phone: '+974 5050 7769',
-    email: 'info@neatqatar.com',
-    address: 'B-Ring Road, Al Mansurah, Doha, Qatar',
-    instagram: 'https://www.instagram.com/neatqatar?utm_source=qr',
-    facebook: 'https://www.facebook.com/share/1CyjSnXrUt/?mibextid=wwXIfr',
-    whatsapp: '+97450507769',
-    tagline: 'Building Excellence, Providing Care',
-    hashtag: '#WeAreNeat'
-  },
-  pages: {
-    home: {
-      badge: 'Award-Winning Construction & Care',
-      title1: 'BUILDING EXCELLENCE',
-      title2: 'PROVIDING CARE',
-      title3: '',
-      subtitle: 'At Neat Construction & Hospitality Services, we transform ideas into enduring structures and memorable experiences.',
-      cta1: 'View Portfolio',
-      cta2: 'Request a Quote',
-      svtitle: 'Our Premium Services',
-      svsubtitle: 'Complete construction and hospitality solutions across Qatar.',
-      pjtitle: 'Selected Works',
-      mq1: 'BUILDING EXCELLENCE',
-      mq2: 'PROVIDING CARE',
-      ct1val: '50+',
-      ct1lbl: 'Projects Completed',
-      ct2val: '8+',
-      ct2lbl: 'Years Experience',
-      ct3val: '100%',
-      ct3lbl: 'Client Satisfaction',
-      ct4val: '24/7',
-      ct4lbl: 'Support Available'
-    },
-    about: {
-      title: "Building Qatar's Future",
-      subtitle: 'Our story of excellence, innovation, and elite construction delivery.',
-      tag: 'Our Story',
-      founded: '2018',
-      tagline: 'Building Excellence, Providing Care',
-      bio1: "NEAT Construction & Hospitality Services is Qatar's premier provider of luxury construction, renovation, glass works, and elite hospitality management.",
-      bio2: 'From our headquarters in Doha, we serve commercial developers, luxury residential clients, and elite hospitality operators across the entire state of Qatar.',
-      missionTitle: 'Our Mission',
-      mission: 'To provide solutions pertaining to our businesses that bring positive influences on society. To adhere to our ethics and values of transparency, integrity, honesty and trust, and reflect the same in our services.',
-      visionTitle: 'Our Vision',
-      vision: 'To be the most sought-after construction company in Qatar by establishing people\'s trust through innovation, sustainability, reliability and excellence of quality in the services we deliver.'
-    },
-    services: {
-      title: 'Our Premium Services',
-      subtitle: "Complete construction and hospitality solutions tailored for Qatar's elite"
-    },
-    whyus: {
-      t1: 'Designed For',
-      t2: 'Precision &',
-      t3: 'Performance',
-      desc: 'NEAT delivers premium services built on compliance, expert training, and efficient delivery protocols.',
-      quote: '"Building Excellence, Providing Care"'
-    },
-    projects: {
-      title: 'Our Portfolio',
-      subtitle: 'A showcase of excellence and precision across Qatar.',
-      label: 'Selected Works',
-      cats: 'All,Commercial,Residential,Renovation,Hospitality'
-    },
-    contact: {
-      title: 'Get In Touch',
-      subtitle: "Reach out through any channel. We're operational 24/7 for emergency service requests.",
-      phone: '+974 5050 7769',
-      email: 'info@neatqatar.com',
-      address: 'B-Ring Road, Al Mansurah, Doha, Qatar',
-      map: 'https://maps.google.com/maps?q=B-Ring+Road,+Al+Mansurah,+Doha,+Qatar&t=&z=15&ie=UTF8&iwloc=&output=embed',
-      ig: 'https://www.instagram.com/neatqatar?utm_source=qr',
-      fb: 'https://www.facebook.com/share/1CyjSnXrUt/?mibextid=wwXIfr',
-      wa: '+97450507769',
-      city: 'Doha, Qatar',
-      hours: 'Sun–Thu 8am–6pm'
-    }
-  },
-  serviceCards: [
-    { id: 's1', title: 'Construction', icon: '🏗️', sub: 'New build, structural, commercial, residential', desc: 'Full-scope new construction projects from foundation to handover, built to the highest QCS standards.' },
-    { id: 's2', title: 'Renovation', icon: '🔨', sub: 'Interior, exterior, fit-out, refurbishment', desc: 'Premium renovation and fit-out services for luxury residential and commercial spaces.' },
-    { id: 's3', title: 'Glass & Mirror Works', icon: '🪟', sub: 'Framing, partitions, decorative glass', desc: 'Precision glass installation, curtain walling, frameless partitions, and decorative mirror works.' },
-    { id: 's4', title: 'Hospitality Services', icon: '🏨', sub: 'Hotel staffing, cleaning, facilities management', desc: 'Elite hospitality management including hotel staffing, luxury cleaning, and facility maintenance.' }
-  ],
-  wuFeatures: [
-    { id: 'f1', title: 'Quality Assured', icon: '🛡️', desc: 'Continuous certification oversight and rigorous QCS construction standards protect legal integrity and building longevity.' },
-    { id: 'f2', title: 'Expert Team', icon: '👷', desc: 'Our workforce combines international engineering methodologies with local Qatari compliance protocols.' },
-    { id: 'f3', title: 'Reliable Partner', icon: '🤝', desc: 'Operating transparent budgets and robust contracts to ensure high-value residential and corporate structural delivery.' },
-    { id: 'f4', title: 'On-Time Delivery', icon: '⏱️', desc: 'Minimizing delays through optimized supply chains, digital resource allocation, and execution scheduling.' }
-  ],
-  testimonials: [
-    { id: 't1', name: 'Ali Al-Thani', role: 'Managing Director', company: 'Qatari Elite Real Estate', text: 'NEAT exceeded our expectations in Qatar. Their response times were lightning-fast, and their technical precision during the structural tower handover was flawless. They delivered uncompromised premium results completely within our budget limits.', rating: 5, imgKey: 'timg_t1' },
-    { id: 't2', name: 'Sarah Jenkins', role: 'Operations Lead', company: 'The Pearl Hospitality Group', text: 'The hospitality and cleaning crew provided for our luxury resort is elite. Their 24/7 technical team is highly responsive, maintaining the entire facility legally and structurally compliant. Working with them has been a complete success.', rating: 5, imgKey: 'timg_t2' }
-  ],
-  projects: [
-    { id: 'p1', title: 'Doha Elite Tower', cat: 'Commercial Construction', loc: 'Lusail City, Doha', year: '2024', desc: 'Premium commercial tower development in the heart of Doha Business District.', imgKey: 'pimg_p1' },
-    { id: 'p2', title: 'The Pearl Luxury Villa', cat: 'Luxury Residential', loc: 'The Pearl, Doha', year: '2024', desc: 'Ultra-luxury private villa development on The Pearl Island.', imgKey: 'pimg_p2' },
-    { id: 'p3', title: 'Neoclassical Villa Project', cat: 'Architectural Design', loc: 'West Bay, Doha', year: '2024', desc: 'Neoclassical architectural design and construction project in West Bay.', imgKey: 'pimg_p3' }
-  ],
-  mediaFiles: []
-};
+const DEFAULT_CFG = require('./config.json');
 
 // Get Config
 app.get('/api/config', (req, res) => {
