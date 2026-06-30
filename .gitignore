@@ -1,0 +1,8 @@
+node_modules/
+.gemini/
+.agents/
+.vscode/
+.idea/
+*.log
+quotations.json
+.env
