@@ -1250,31 +1250,21 @@ footer img[alt*="Logo"] {
   opacity: 0;
   width: 72px;
   height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
   z-index: 999;
-  background: rgba(17, 17, 17, 0.85);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
-  backdrop-filter: blur(12px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s, 
-              box-shadow 0.3s;
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 #floating-side-logo-link img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50% !important;
+  object-fit: contain;
 }
 #floating-side-logo-link.visible {
   opacity: 1;
   transform: translateY(-50%) scale(1);
 }
 #floating-side-logo-link:hover {
-  border-color: var(--gold);
-  box-shadow: 0 0 35px rgba(212, 175, 55, 0.45);
+  transform: translateY(-50%) scale(1.05);
 }
 
 /* Responsive: Hide on mobile/tablet devices to prevent content overlap */
