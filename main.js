@@ -383,8 +383,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const canonicalLink = document.querySelector('link[rel="canonical"]');
     if (canonicalLink) {
       const currentHost = window.location.host;
-      if (currentHost.includes('neatconstruction.com')) {
-        canonicalLink.href = canonicalLink.href.replace('neatqatar.com', 'neatconstruction.com');
+      if (currentHost.includes('neatqatar.com')) {
+        canonicalLink.href = canonicalLink.href.replace('www.neat-construction.com', 'www.neatqatar.com');
       }
     }
   })();

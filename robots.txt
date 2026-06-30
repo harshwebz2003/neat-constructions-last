@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://neatqatar.com/sitemap.xml
-Sitemap: https://neatconstruction.com/sitemap-neatconstruction.xml
+Sitemap: https://www.neat-construction.com/sitemap.xml
+Sitemap: https://www.neatqatar.com/sitemap-neatqatar.xml

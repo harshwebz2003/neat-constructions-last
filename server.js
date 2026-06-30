@@ -26,8 +26,11 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 // Dynamic sitemap.xml for multiple domains (neatqatar.com and neatconstruction.com)
 app.get('/sitemap.xml', (req, res) => {
-  const host = req.get('host') || 'neatqatar.com';
-  const domain = host.includes('neatconstruction.com') ? 'neatconstruction.com' : 'neatqatar.com';
+  const host = req.get('host') || 'www.neat-construction.com';
+  let domain = 'www.neat-construction.com';
+  if (host.includes('neatqatar.com')) {
+    domain = 'www.neatqatar.com';
+  }
   
   res.header('Content-Type', 'application/xml');
   res.send(`<?xml version="1.0" encoding="UTF-8"?>
@@ -73,8 +76,11 @@ app.get('/sitemap.xml', (req, res) => {
 
 // Dynamic robots.txt
 app.get('/robots.txt', (req, res) => {
-  const host = req.get('host') || 'neatqatar.com';
-  const domain = host.includes('neatconstruction.com') ? 'neatconstruction.com' : 'neatqatar.com';
+  const host = req.get('host') || 'www.neat-construction.com';
+  let domain = 'www.neat-construction.com';
+  if (host.includes('neatqatar.com')) {
+    domain = 'www.neatqatar.com';
+  }
   
   res.header('Content-Type', 'text/plain');
   res.send(`User-agent: *
