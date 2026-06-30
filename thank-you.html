@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | NEAT Construction & Hospitality Services</title>
+
+<!-- SEO & Meta Optimization -->
+<meta name="description" content="Thank you for contacting NEAT Construction & Hospitality Services. Our team in Doha, Qatar will get back to you shortly."/>
+<meta name="keywords" content="thank you, neat construction"/>
+<meta name="author" content="NEAT Construction & Hospitality Services"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://neatqatar.com/thank-you.html"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://neatqatar.com/thank-you.html"/>
+<meta property="og:title" content="Thank You | NEAT Construction & Hospitality Services"/>
+<meta property="og:description" content="Thank you for contacting NEAT Construction & Hospitality Services. Our team in Doha, Qatar will get back to you shortly."/>
+<meta property="og:image" content="https://neatqatar.com/Assests/Logo.png"/>
+<meta property="og:site_name" content="NEAT Construction & Hospitality Services"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content="https://neatqatar.com/thank-you.html"/>
+<meta name="twitter:title" content="Thank You | NEAT Construction & Hospitality Services"/>
+<meta name="twitter:description" content="Thank you for contacting NEAT Construction & Hospitality Services. Our team in Doha, Qatar will get back to you shortly."/>
+<meta name="twitter:image" content="https://neatqatar.com/Assests/Logo.png"/>
+
+<!-- JSON-LD Structured Data Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Thank You Page",
+  "description": "Confirmation page for form submission."
+}
+</script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            gold: '#D4AF37',
+            dark: '#0A0A0A',
+            charcoal: '#111111',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --dark: #0A0A0A;
+      --charcoal: #111111;
+      --text: #F3F4F6;
+    }
+    
+    body {
+      background-color: var(--dark);
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    /* Ambient glow */
+    .ambient-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+      filter: blur(40px);
+      z-index: 1;
+      animation: floatGlow 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(-20px, -20px); }
+      100% { transform: translate(20px, 20px); }
+    }
+
+    /* Checkmark drawing animation */
+    .checkmark-circle {
+      stroke-dasharray: 166;
+      stroke-dashoffset: 166;
+      stroke-width: 2;
+      stroke-miterlimit: 10;
+      stroke: var(--gold);
+      fill: none;
+      animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: block;
+      stroke-width: 2;
+      stroke: var(--gold);
+      stroke-miterlimit: 10;
+      margin: 10% auto;
+      box-shadow: inset 0px 0px 0px rgba(212, 175, 55, 0.2);
+      animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s forwards;
+    }
+
+    .checkmark-check {
+      transform-origin: 50% 50%;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+
+    @keyframes stroke {
+      100% { stroke-dashoffset: 0; }
+    }
+
+    @keyframes scale {
+      0%, 100% { transform: none; }
+      50% { transform: scale3d(1.1, 1.1, 1); }
+    }
+
+    @keyframes fill {
+      100% { box-shadow: inset 0px 0px 0px 40px rgba(212, 175, 55, 0.05); }
+    }
+
+    /* Card entry transition */
+    .entry-card {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: cardEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+
+    @keyframes cardEnter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="relative flex items-center justify-center min-h-screen font-sans px-4">
+
+  <!-- Ambient background elements -->
+  <div class="ambient-glow top-1/4 left-1/4"></div>
+  <div class="ambient-glow bottom-1/4 right-1/4" style="animation-delay: -5s;"></div>
+
+  <!-- Content Container -->
+  <div class="relative z-10 w-full max-w-lg text-center entry-card">
+    <div class="bg-charcoal/40 backdrop-blur-xl border border-white/10 rounded-[32px] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+      <!-- Gold corner borders -->
+      <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/40 rounded-tl-[32px]"></div>
+      <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-gold/40 rounded-tr-[32px]"></div>
+      <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-gold/40 rounded-bl-[32px]"></div>
+      <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/40 rounded-br-[32px]"></div>
+
+      <!-- Animated SVG Checkmark -->
+      <div class="flex justify-center mb-6">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+
+      <!-- Headers -->
+      <span class="text-[9px] uppercase tracking-[0.25em] text-gold font-bold mb-3 block">Review Submitted</span>
+      <h1 class="font-display text-2xl md:text-3xl font-semibold text-white mb-4">Thank You!</h1>
+      <p class="text-xs md:text-sm text-zinc-400 leading-relaxed mb-8 max-w-xs mx-auto">
+        Your review has been successfully submitted. We appreciate you taking the time to share your experience with NEAT.
+      </p>
+
+      <!-- Return Button -->
+      <a href="index.html" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-gold bg-gold text-black text-xs font-bold tracking-widest uppercase hover:bg-transparent hover:text-white transition-all duration-300 shadow-[0_4px_20px_rgba(212,175,55,0.15)] hover:shadow-none">
+        Return to Home
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Test Client",
+    "email": "client@example.com",
+    "phone": "+974 5555 5555",
+    "service": "construction",
+    "message": "This is a test message to verify the contact form submission.",
+    "timestamp": "2026-06-30T08:37:04.718Z"
+  },
+  {
+    "name": "C. Harshe",
+    "email": "chamilka.ch@gmail.com",
+    "phone": "0770663154",
+    "service": "renovation",
+    "message": "testing",
+    "timestamp": "2026-06-30T09:14:07.611Z"
+  },
+  {
+    "name": "Test Contact User",
+    "email": "testcontact@example.com",
+    "phone": "+974 1234 5678",
+    "service": "Construction of Buildings & Warehouses",
+    "message": "This is a test message to verify the contact form saves to Firebase, sends email, and goes to WhatsApp.",
+    "timestamp": "2026-06-30T09:24:53.081Z"
+  }
+]
