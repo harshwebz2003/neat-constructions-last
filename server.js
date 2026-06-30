@@ -82,8 +82,10 @@ Allow: /
 Sitemap: https://${domain}/sitemap.xml`);
 });
 
-// Serve static files from the root directory
-app.use(express.static(__dirname));
+// Serve static files from the root directory with html extension fallback
+app.use(express.static(__dirname, {
+  extensions: ['html', 'htm']
+}));
 
 // Also serve uploaded files from the dynamic uploads directory
 app.use('/Assets/uploads', express.static(UPLOADS_DIR));
@@ -179,6 +181,13 @@ app.post('/api/quotations', (req, res) => {
       res.json({ success: true, message: 'Quotation submitted successfully.' });
     });
   });
+});
+// Catch-all route to serve index.html for frontend routing fallback
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api/')) {
+    return next();
+  }
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 if (require.main === module) {
