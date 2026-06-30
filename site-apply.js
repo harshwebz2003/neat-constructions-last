@@ -276,7 +276,7 @@
     const lightUrl = await getImg('logo-light');
     const darkUrl = await getImg('logo-dark');
     if (lightUrl || darkUrl) {
-      document.querySelectorAll('.nav-logo, .logo-img, img[alt="NEAT Logo"], .sidebar-logo img, #floating-side-logo-link img').forEach(el => {
+      document.querySelectorAll('.nav-logo, .logo-img, img[alt="NEAT Logo"], .sidebar-logo img').forEach(el => {
         el.src = lightUrl || darkUrl;
       });
     }
@@ -294,7 +294,7 @@
     link.setAttribute('title', 'Go to Home');
     
     const img = document.createElement('img');
-    img.src = 'Assets/Logo.png';
+    img.src = 'Assets/animate logo.gif';
     img.alt = 'NEAT Logo';
     
     link.appendChild(img);
