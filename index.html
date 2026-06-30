@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://neatqatar.com/"/>
 <meta property="og:title" content="NEAT Construction & Hospitality Services | Doha, Qatar"/>
 <meta property="og:description" content="Qatar's premier construction and hospitality solutions provider. Specialized in residential/commercial construction, exquisite renovations, glazing, glass & mirror works, and custom hospitality manpower support in Doha."/>
-<meta property="og:image" content="https://neatqatar.com/Assests/Logo.png"/>
+<meta property="og:image" content="https://neatqatar.com/Assets/Logo.png"/>
 <meta property="og:site_name" content="NEAT Construction & Hospitality Services"/>
 
 <!-- Twitter -->
@@ -25,7 +25,7 @@
 <meta name="twitter:url" content="https://neatqatar.com/"/>
 <meta name="twitter:title" content="NEAT Construction & Hospitality Services | Doha, Qatar"/>
 <meta name="twitter:description" content="Qatar's premier construction and hospitality solutions provider. Specialized in residential/commercial construction, exquisite renovations, glazing, glass & mirror works, and custom hospitality manpower support in Doha."/>
-<meta name="twitter:image" content="https://neatqatar.com/Assests/Logo.png"/>
+<meta name="twitter:image" content="https://neatqatar.com/Assets/Logo.png"/>
 
 <!-- JSON-LD Structured Data Schema -->
 <script type="application/ld+json">
@@ -35,8 +35,8 @@
   "name": "NEAT Construction & Hospitality Services",
   "alternateName": "NEAT Construction",
   "url": "https://neatqatar.com/",
-  "logo": "https://neatqatar.com/Assests/Logo.png",
-  "image": "https://neatqatar.com/Assests/Logo.png",
+  "logo": "https://neatqatar.com/Assets/Logo.png",
+  "image": "https://neatqatar.com/Assets/Logo.png",
   "description": "NEAT Construction & Hospitality Services is Qatar's premier provider of elite structural buildings, exquisite renovations, luxury glass & mirror works, and custom hospitality support services based in Doha, Qatar.",
   "telephone": "+97450507769",
   "email": "info@neatqatar.com",
@@ -131,16 +131,16 @@ tailwind.config={
   <!-- Background Video for Preloader -->
   <div class="absolute inset-0 z-0 pointer-events-none">
     <video id="ploader-video" autoplay loop muted playsinline class="w-full h-full object-cover">
-      <source src="Assests/Hero Video.mp4" type="video/mp4">
+      <source src="Assets/Hero Video.mp4" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-black/60"></div>
   </div>
   <div class="flex flex-col items-center gap-5 relative z-10">
     <div class="relative w-20 h-20 flex items-center justify-center">
       <!-- Static Logo inside -->
-      <img src="Assests/Logo.png" alt="NEAT Logo" class="absolute w-16 h-16 object-contain z-10" />
+      <img src="Assets/Logo.png" alt="NEAT Logo" class="absolute w-16 h-16 object-contain z-10" />
       <!-- Spinning Ring around it -->
-      <div class="absolute inset-0 rounded-full animate-spin z-0" style="border: 2px solid rgba(212, 175, 55, .2); border-top-color: var(--gold);"></div>
+      
     </div>
     <span style="font-family:'Bebas Neue',sans-serif;letter-spacing:.15em;font-size:.65rem;color:rgba(255,255,255,.7)">NEAT CONSTRUCTION &amp; HOSPITALITY SERVICES</span>
   </div>
@@ -161,9 +161,9 @@ tailwind.config={
       if (video) {
         var isPortrait = window.matchMedia('(orientation: portrait)').matches;
         if (isPortrait) {
-          video.src = "Assests/Hero Potrait.mp4";
+          video.src = "Assets/Hero Potrait.mp4";
         } else {
-          video.src = "Assests/Hero Video.mp4";
+          video.src = "Assets/Hero Video.mp4";
         }
         video.load();
         video.play().catch(function(e) { console.log('Preloader autoplay prevented:', e); });
@@ -173,7 +173,7 @@ tailwind.config={
 </div>
 
 <!-- Background Ambient Sound Loop -->
-<audio id="bg-audio" loop src="Assests/Sound.wav"></audio>
+<audio id="bg-audio" loop src="Assets/Sound.wav"></audio>
 
 <!-- GSAP Custom Cursor -->
 <div class="g-cursor" id="gcursor"></div>
@@ -218,7 +218,7 @@ tailwind.config={
   <div id="nav-tracker" class="absolute bg-gold/10 border border-gold/10 dark:bg-white/5 dark:border-white/5 rounded-full transition-all duration-300 ease-out pointer-events-none opacity-0 z-0"></div>
   
   <a href="index.html" class="flex items-center gap-3 cursor-pointer" data-cursor="Home">
-    <img src="Assests/Logo.png" alt="NEAT Construction & Hospitality Services" class="h-12 w-auto object-contain" style="max-height:48px;max-width:160px" />
+    <img src="Assets/Logo.png" alt="NEAT Construction & Hospitality Services" class="h-12 w-auto object-contain" style="max-height:48px;max-width:160px" />
   </a>
   <div class="hidden lg:flex items-center gap-2 relative z-10">
     <a href="index.html" class="nav-link active-link">Home</a>
@@ -300,8 +300,8 @@ tailwind.config={
   <div class="absolute inset-0 z-0 opacity-35 pointer-events-none"
        style="mask-image: linear-gradient(180deg, transparent, black 0%, black 70%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, black 0%, black 70%, transparent);">
     <video id="hero-bg-video" autoplay loop muted playsinline class="w-full h-full object-cover" style="object-position: center 30%;">
-      <source src="Assests/Hero Potrait.mp4" type="video/mp4" media="(orientation: portrait)">
-      <source src="Assests/Hero Video.mp4" type="video/mp4">
+      <source src="Assets/Hero Potrait.mp4" type="video/mp4" media="(orientation: portrait)">
+      <source src="Assets/Hero Video.mp4" type="video/mp4">
     </video>
     <script>
       (function() {
@@ -310,9 +310,9 @@ tailwind.config={
           var isPortrait = window.matchMedia('(orientation: portrait)').matches;
           var sources = video.getElementsByTagName('source');
           if (isPortrait) {
-            video.src = "Assests/Hero Potrait.mp4";
+            video.src = "Assets/Hero Potrait.mp4";
           } else {
-            video.src = "Assests/Hero Video.mp4";
+            video.src = "Assets/Hero Video.mp4";
           }
           video.load();
           video.play().catch(function(e) { console.log('Autoplay play prevented:', e); });
@@ -529,7 +529,7 @@ tailwind.config={
 
       <div id="projects-marquee" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="premium-card col-span-1 lg:col-span-2 h-[480px] rounded-3xl relative overflow-hidden group border border-white/10 bg-white/5 cursor-pointer reveal-left" data-cursor="View">
-          <img id="construction-img" loading="lazy" src="Assests/project1.jpg" alt="Doha Elite Tower" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:rotate-1">
+          <img id="construction-img" loading="lazy" src="Assets/project1.jpg" alt="Doha Elite Tower" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:rotate-1">
           <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10"></div>
           <div class="absolute bottom-8 left-8 right-8 z-20">
             <span class="text-[10px] uppercase tracking-wider text-gold font-bold mb-2 block">Commercial Division</span>
@@ -539,7 +539,7 @@ tailwind.config={
         </div>
 
         <div class="premium-card col-span-1 lg:col-span-1 h-[480px] rounded-3xl relative overflow-hidden group border border-white/10 bg-white/5 cursor-pointer reveal-right rd1" data-cursor="View">
-          <img loading="lazy" src="Assests/project2.png" alt="The Pearl Luxury Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:-rotate-1">
+          <img loading="lazy" src="Assets/project2.png" alt="The Pearl Luxury Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:-rotate-1">
           <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10"></div>
           <div class="absolute bottom-8 left-8 right-8 z-20">
             <span class="text-[10px] uppercase tracking-wider text-gold font-bold mb-2 block">Premium Renovation</span>
@@ -549,7 +549,7 @@ tailwind.config={
         </div>
 
         <div class="premium-card col-span-1 lg:col-span-3 h-[380px] rounded-3xl relative overflow-hidden group border border-white/10 bg-white/5 cursor-pointer reveal rd2" data-cursor="View">
-          <img loading="lazy" src="Assests/project3.jpg" alt="VIP Concierge Fleet" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103">
+          <img loading="lazy" src="Assets/project3.jpg" alt="VIP Concierge Fleet" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103">
           <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent z-10"></div>
           <div class="absolute bottom-8 left-8 right-8 z-20">
             <span class="text-[10px] uppercase tracking-wider text-gold font-bold mb-2 block">Hospitality Division</span>
@@ -598,7 +598,7 @@ tailwind.config={
 
   <!-- SECTION 3: SAFETY & COMPLIANCE BANNER -->
   <section class="relative w-full h-[500px] overflow-hidden flex items-center justify-center border-t border-b border-white/10" id="safety">
-    <div class="absolute inset-0 bg-[url('Assests/safety-banner.png')] bg-cover bg-center pointer-events-none" style="filter: brightness(0.4) contrast(1.15);"></div>
+    <div class="absolute inset-0 bg-[url('Assets/safety-banner.png')] bg-cover bg-center pointer-events-none" style="filter: brightness(0.4) contrast(1.15);"></div>
     <div class="absolute inset-6 border border-gold/20 pointer-events-none z-10 rounded-2xl"></div>
     <div class="absolute inset-8 border border-gold/10 pointer-events-none z-10 rounded-xl"></div>
     <div class="relative z-20 max-w-4xl mx-auto px-6 text-center py-12 rounded-3xl border border-white/10 bg-black/60 backdrop-blur-md shadow-2xl reveal">
@@ -692,7 +692,7 @@ tailwind.config={
       <div class="md:col-span-2">
         
   <div class="flex items-center gap-3 mb-5">
-    <img src="Assests/Logo.png" alt="NEAT Logo" class="h-16 w-auto object-contain block" style="max-height:64px;max-width:200px" />
+    <img src="Assets/Logo.png" alt="NEAT Logo" class="h-16 w-auto object-contain block" style="max-height:64px;max-width:200px" />
   </div>
         <p class="text-xs leading-relaxed max-w-xs mb-6 text-dark/60 dark:text-white/50">Building Excellence, Providing Care.</p>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.2em;color:var(--text-muted)">#WeAreNeat</div>
@@ -780,14 +780,14 @@ const testimonialData = {
     title: '"Flawless handover & technical precision."',
     desc: '"NEAT exceeded our expectations in Qatar. Their response times were lightning-fast, and their technical precision during the structural tower handover was flawless. They delivered uncompromised premium results completely within our budget limits."',
     author: 'Ali Al-Thani — Managing Director, Qatari Elite Real Estate',
-    media: 'Assests/ali-portrait.png'
+    media: 'Assets/ali-portrait.png'
   },
   pearl: {
     tag: 'Elite Hospitality / Operations',
     title: '"Elite hospitality & absolute compliance."',
     desc: '"The hospitality and cleaning crew provided for our luxury resort is elite. Their 24/7 technical team is highly responsive, maintaining the entire facility legally and structurally compliant. Working with them has been a complete success."',
     author: 'Sarah Jenkins — Operations Lead, The Pearl Hospitality Group',
-    media: 'Assests/sarah-portrait.png'
+    media: 'Assets/sarah-portrait.png'
   }
 };
 

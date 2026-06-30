@@ -294,7 +294,7 @@
     link.setAttribute('title', 'Go to Home');
     
     const img = document.createElement('img');
-    img.src = 'Assests/Logo.png';
+    img.src = 'Assets/Logo.png';
     img.alt = 'NEAT Logo';
     
     link.appendChild(img);

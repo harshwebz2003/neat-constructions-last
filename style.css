@@ -1196,49 +1196,47 @@ img[loading="lazy"] { content-visibility: auto; }
 html, body { overflow-x: hidden; max-width: 100vw; }
 section, footer, header, nav { overflow-x: hidden; }
 
-/* Circular logo styling across all pages */
+/* Logo styling across all pages - preserve original aspect ratio */
 img[src*="Logo.png"], 
 img[src*="Logo_new"], 
 img[alt*="Logo"], 
 img[alt*="NEAT Logo"],
 .nav-logo img,
 .logo-img {
-  object-fit: cover !important;
-  border-radius: 50% !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
 }
 
-/* Force navbar logo to be square for circular aesthetic */
 #navbar img[src*="Logo.png"],
 #navbar img[alt*="Logo"],
 #navbar img[alt*="NEAT Construction"] {
-  width: 64px !important;
-  height: 64px !important;
-  max-height: none !important;
-  max-width: none !important;
-  transition: width 0.3s ease, height 0.3s ease;
+  height: 48px !important;
+  width: auto !important;
+  max-height: 48px !important;
+  transition: height 0.3s ease;
 }
 
 @media (max-width: 1023px) {
   #navbar img[src*="Logo.png"],
   #navbar img[alt*="Logo"],
   #navbar img[alt*="NEAT Construction"] {
-    width: 52px !important;
-    height: 52px !important;
+    height: 40px !important;
+    width: auto !important;
   }
 }
 
-/* Force footer logo to be square for circular aesthetic */
 footer img[src*="Logo.png"],
 footer img[alt*="Logo"] {
-  width: 80px !important;
-  height: 80px !important;
+  height: 64px !important;
+  width: auto !important;
+  object-fit: contain !important;
 }
 
-/* Force preloader logo to be square for circular aesthetic */
 #ploader img[src*="Logo.png"],
 #ploader img[alt*="Logo"] {
-  width: 80px !important;
-  height: 80px !important;
+  width: 64px !important;
+  height: 64px !important;
+  object-fit: contain !important;
 }
 
 /* Floating Sticky Side Logo */

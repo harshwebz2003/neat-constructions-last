@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://neatqatar.com/projects.html"/>
 <meta property="og:title" content="Our Projects Portfolio | NEAT Construction & Hospitality"/>
 <meta property="og:description" content="Browse NEAT's project portfolio in Doha, Qatar. See our elite structural work, luxurious villa renovations, corporate fit-outs, and custom glazing installations."/>
-<meta property="og:image" content="https://neatqatar.com/Assests/Logo.png"/>
+<meta property="og:image" content="https://neatqatar.com/Assets/Logo.png"/>
 <meta property="og:site_name" content="NEAT Construction & Hospitality Services"/>
 
 <!-- Twitter -->
@@ -25,7 +25,7 @@
 <meta name="twitter:url" content="https://neatqatar.com/projects.html"/>
 <meta name="twitter:title" content="Our Projects Portfolio | NEAT Construction & Hospitality"/>
 <meta name="twitter:description" content="Browse NEAT's project portfolio in Doha, Qatar. See our elite structural work, luxurious villa renovations, corporate fit-outs, and custom glazing installations."/>
-<meta name="twitter:image" content="https://neatqatar.com/Assests/Logo.png"/>
+<meta name="twitter:image" content="https://neatqatar.com/Assets/Logo.png"/>
 
 <!-- JSON-LD Structured Data Schema -->
 <script type="application/ld+json">
@@ -100,16 +100,16 @@ tailwind.config={
   <!-- Background Video for Preloader -->
   <div class="absolute inset-0 z-0 pointer-events-none">
     <video id="ploader-video" autoplay loop muted playsinline class="w-full h-full object-cover">
-      <source src="Assests/Hero Video.mp4" type="video/mp4">
+      <source src="Assets/Hero Video.mp4" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-black/60"></div>
   </div>
   <div class="flex flex-col items-center gap-5 relative z-10">
     <div class="relative w-20 h-20 flex items-center justify-center">
       <!-- Static Logo inside -->
-      <img src="Assests/Logo.png" alt="NEAT Logo" class="absolute w-16 h-16 object-contain z-10" />
+      <img src="Assets/Logo.png" alt="NEAT Logo" class="absolute w-16 h-16 object-contain z-10" />
       <!-- Spinning Ring around it -->
-      <div class="absolute inset-0 rounded-full animate-spin z-0" style="border: 2px solid rgba(212, 175, 55, .2); border-top-color: var(--gold);"></div>
+      
     </div>
     <span style="font-family:'Bebas Neue',sans-serif;letter-spacing:.15em;font-size:.65rem;color:rgba(255,255,255,.7)">NEAT CONSTRUCTION &amp; HOSPITALITY SERVICES</span>
   </div>
@@ -130,9 +130,9 @@ tailwind.config={
       if (video) {
         var isPortrait = window.matchMedia('(orientation: portrait)').matches;
         if (isPortrait) {
-          video.src = "Assests/Hero Potrait.mp4";
+          video.src = "Assets/Hero Potrait.mp4";
         } else {
-          video.src = "Assests/Hero Video.mp4";
+          video.src = "Assets/Hero Video.mp4";
         }
         video.load();
         video.play().catch(function(e) { console.log('Preloader autoplay prevented:', e); });
@@ -142,7 +142,7 @@ tailwind.config={
 </div>
 
 <!-- Background Ambient Sound Loop -->
-<audio id="bg-audio" loop src="Assests/Sound.wav"></audio>
+<audio id="bg-audio" loop src="Assets/Sound.wav"></audio>
 
 <!-- GSAP Custom Cursor -->
 <div class="g-cursor" id="gcursor"></div>
@@ -187,7 +187,7 @@ tailwind.config={
   <div id="nav-tracker" class="absolute bg-gold/10 border border-gold/10 dark:bg-white/5 dark:border-white/5 rounded-full transition-all duration-300 ease-out pointer-events-none opacity-0 z-0"></div>
   
   <a href="index.html" class="flex items-center gap-3 cursor-pointer" data-cursor="Home">
-    <img src="Assests/Logo.png" alt="NEAT Construction & Hospitality Services" class="h-12 w-auto object-contain" style="max-height:48px;max-width:160px" />
+    <img src="Assets/Logo.png" alt="NEAT Construction & Hospitality Services" class="h-12 w-auto object-contain" style="max-height:48px;max-width:160px" />
   </a>
   <div class="hidden lg:flex items-center gap-2 relative z-10">
     <a href="index.html" class="nav-link ">Home</a>
@@ -306,7 +306,7 @@ tailwind.config={
 
         <!-- Right Media -->
         <div class="lg:col-span-5 relative overflow-hidden rounded-3xl aspect-[4/3] bg-zinc-100 dark:bg-zinc-950 border border-dark/15 dark:border-white/5 flex items-center justify-center shadow-md" id="board-media-container" data-cursor="Expand">
-          <img id="board-img" src="Assests/project2.png" alt="West Bay Corporate Suites" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+          <img id="board-img" src="Assets/project2.png" alt="West Bay Corporate Suites" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
           <video id="board-video" autoplay loop muted playsinline class="w-full h-full object-cover hidden" style="height: 100%; width: 100%; object-fit: cover;">
             <source src="" type="video/mp4">
           </video>
@@ -324,7 +324,7 @@ tailwind.config={
       <div class="md:col-span-2">
         
   <div class="flex items-center gap-3 mb-5">
-    <img src="Assests/Logo.png" alt="NEAT Logo" class="h-16 w-auto object-contain block" style="max-height:64px;max-width:200px" />
+    <img src="Assets/Logo.png" alt="NEAT Logo" class="h-16 w-auto object-contain block" style="max-height:64px;max-width:200px" />
   </div>
         <p class="text-xs leading-relaxed max-w-xs mb-6 text-dark/60 dark:text-white/50">Building Excellence, Providing Care.</p>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.2em;color:var(--text-muted)">#WeAreNeat</div>
@@ -382,14 +382,14 @@ const projectData = {
     tag: 'Completed / Lusail',
     title: 'Lusail Business Center',
     desc: 'Structural design, steel installation, and complete facade engineering for Lusail business quarters.',
-    media: 'Assests/project1.jpg',
+    media: 'Assets/project1.jpg',
     isVideo: false
   },
   renovation: {
     tag: 'Completed / West Bay',
     title: 'West Bay Corporate Suites',
     desc: 'Complete office interior upgrades, minimalist architectural remodeling, and advanced workplace renovation executed within rigid timelines.',
-    media: 'Assests/project2.png',
+    media: 'Assets/project2.png',
     isVideo: false
   },
 
@@ -397,7 +397,7 @@ const projectData = {
     tag: 'Active / Doha',
     title: 'VIP Concierge Fleet',
     desc: 'Comprehensive facility management, technical support, and custom hospitality orchestration for luxury corporate resorts and private embassies.',
-    media: 'Assests/project3.jpg',
+    media: 'Assets/project3.jpg',
     isVideo: false
   }
 };

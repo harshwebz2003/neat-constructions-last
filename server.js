@@ -7,12 +7,17 @@ const multer = require('multer');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const CONFIG_FILE = path.join(__dirname, 'config.json');
-const UPLOADS_DIR = path.join(__dirname, 'Assests', 'uploads');
+const isVercel = process.env.VERCEL || process.env.NODE_ENV === 'production';
+const CONFIG_FILE = isVercel ? path.join('/tmp', 'config.json') : path.join(__dirname, 'config.json');
+const UPLOADS_DIR = isVercel ? path.join('/tmp', 'uploads') : path.join(__dirname, 'Assets', 'uploads');
 
 // Ensure uploads directory exists
 if (!fs.existsSync(UPLOADS_DIR)) {
-  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+  try {
+    fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+  } catch (err) {
+    console.error('Failed to create uploads directory:', err);
+  }
 }
 
 app.use(cors());
@@ -21,6 +26,9 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 // Serve static files from the root directory
 app.use(express.static(__dirname));
+
+// Also serve uploaded files from the dynamic uploads directory
+app.use('/Assets/uploads', express.static(UPLOADS_DIR));
 
 // Multer Storage Configuration for Local Uploads
 const storage = multer.diskStorage({
@@ -148,10 +156,24 @@ app.get('/api/config', (req, res) => {
       res.json(JSON.parse(data));
     });
   } else {
-    // Write default config
-    fs.writeFile(CONFIG_FILE, JSON.stringify(DEFAULT_CFG, null, 2), 'utf8', (err) => {
-      if (err) return res.status(500).json({ error: 'Failed to initialize config file.' });
-      res.json(DEFAULT_CFG);
+    // Try reading local config.json first as a template
+    const localConfigPath = path.join(__dirname, 'config.json');
+    let initialCfg = DEFAULT_CFG;
+    if (fs.existsSync(localConfigPath)) {
+      try {
+        initialCfg = JSON.parse(fs.readFileSync(localConfigPath, 'utf8'));
+      } catch (e) {
+        initialCfg = DEFAULT_CFG;
+      }
+    }
+    
+    // Write default/local config template to CONFIG_FILE (writable temp dir)
+    fs.writeFile(CONFIG_FILE, JSON.stringify(initialCfg, null, 2), 'utf8', (err) => {
+      if (err) {
+        console.warn('Warning: Failed to initialize config file in temp dir.', err);
+        return res.json(initialCfg); // Fallback to memory
+      }
+      res.json(initialCfg);
     });
   }
 });
@@ -173,14 +195,14 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded.' });
   }
-  const relativePath = 'Assests/uploads/' + req.file.filename;
+  const relativePath = 'Assets/uploads/' + req.file.filename;
   res.json({ success: true, url: relativePath });
 });
 
 // Handle contact submissions (save to local JSON database)
 app.post('/api/quotations', (req, res) => {
   const formData = req.body;
-  const QUOTATIONS_FILE = path.join(__dirname, 'quotations.json');
+  const QUOTATIONS_FILE = isVercel ? path.join('/tmp', 'quotations.json') : path.join(__dirname, 'quotations.json');
   
   fs.readFile(QUOTATIONS_FILE, 'utf8', (err, data) => {
     let quotations = [];
