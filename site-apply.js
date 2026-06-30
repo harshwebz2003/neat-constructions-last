@@ -295,7 +295,7 @@
     
     const img = document.createElement('img');
     img.src = 'Assets/animate logo.gif';
-    img.alt = 'NEAT Logo';
+    img.alt = 'NEAT Floating Logo';
     
     link.appendChild(img);
     document.body.appendChild(link);
