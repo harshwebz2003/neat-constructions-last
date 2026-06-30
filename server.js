@@ -24,6 +24,64 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
+// Dynamic sitemap.xml for multiple domains (neatqatar.com and neatconstruction.com)
+app.get('/sitemap.xml', (req, res) => {
+  const host = req.get('host') || 'neatqatar.com';
+  const domain = host.includes('neatconstruction.com') ? 'neatconstruction.com' : 'neatqatar.com';
+  
+  res.header('Content-Type', 'application/xml');
+  res.send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://${domain}/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://${domain}/about.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://${domain}/services.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://${domain}/why-us.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://${domain}/projects.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://${domain}/contact.html</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>`);
+});
+
+// Dynamic robots.txt
+app.get('/robots.txt', (req, res) => {
+  const host = req.get('host') || 'neatqatar.com';
+  const domain = host.includes('neatconstruction.com') ? 'neatconstruction.com' : 'neatqatar.com';
+  
+  res.header('Content-Type', 'text/plain');
+  res.send(`User-agent: *
+Allow: /
+Sitemap: https://${domain}/sitemap.xml`);
+});
+
 // Serve static files from the root directory
 app.use(express.static(__dirname));
 
