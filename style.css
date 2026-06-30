@@ -1175,7 +1175,7 @@ img[loading="lazy"] { content-visibility: auto; }
 html, body { overflow-x: hidden; max-width: 100vw; }
 section, footer, header, nav { overflow-x: hidden; }
 
-/* Logo styling across all pages - preserve circular shape and aspect ratio */
+/* Logo styling across all pages - preserve circular shape and aspect ratio with 3D gold finish */
 img[src*="Logo.png"], 
 img[src*="Logo_new"], 
 img[alt*="Logo"], 
@@ -1185,6 +1185,9 @@ img[alt*="NEAT Logo"],
   object-fit: cover !important;
   border-radius: 50% !important;
   aspect-ratio: 1 / 1 !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.6) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25) !important;
+  filter: drop-shadow(0 2px 5px rgba(212, 175, 55, 0.3)) contrast(1.1) brightness(1.05) !important;
 }
 
 #navbar img[src*="Logo.png"],
