@@ -21,6 +21,16 @@ if (!fs.existsSync(UPLOADS_DIR)) {
 }
 
 app.use(cors());
+
+// 301 Redirect from neatqatar.com to www.neat-construction.com
+app.use((req, res, next) => {
+  const host = req.get('host') || '';
+  if (host.includes('neatqatar.com')) {
+    return res.redirect(301, `https://www.neat-construction.com${req.originalUrl}`);
+  }
+  next();
+});
+
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
